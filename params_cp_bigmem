@@ -1,0 +1,7 @@
+USERNAME="jablum"
+PORT="8888"
+PARTITION="bigmem"
+RESOURCE="sherlock"
+MEM="250G"
+TIME="3:00:00"
+CONTAINERSHARE="/scratch/users/vsochat/share"
