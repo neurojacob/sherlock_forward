@@ -44,11 +44,10 @@ fi
 
 PORT=$1
 CONTAINER="${2}"
-NOTEBOOK_DIR="${3:-${SCRATCH}}"
-CONTAINERSHARE=${4:-/scratch/users/vsochat/share}
+NOTEBOOK_DIR="${3:-${HOME}}"
+CONTAINERSHARE=${4:-/oak/stanford/groups/agitler/Shared/container_share}
 
 module use system
-module load singularity
 export SINGULARITY_CACHEDIR="${SCRATCH}/.singularity"
 echo "Container is ${CONTAINER}"
 echo "Notebook directory is ${NOTEBOOK_DIR}"
@@ -59,8 +58,8 @@ if [ ! -f "${CONTAINER}" ]
     then
 
     # The container name is the hash of the string
-    CONTAINER_NAME=$(echo -n "${CONTAINER}" | md5sum | awk '{ print $1 }').simg
-
+    #CONTAINER_NAME=$(echo -n "${CONTAINER}" | md5sum | awk '{ print $1 }').simg
+    CONTAINER_NAME="${CONTAINER}"
     # Attempt 1: look in the containershare
     echo "Attempt 1: Looking for ${CONTAINERSHARE}/${CONTAINER_NAME}"
     if [ -f "${CONTAINERSHARE}/${CONTAINER_NAME}" ]
@@ -97,4 +96,4 @@ if [ ! -d "${HOME}/.local" ];
         mkdir -p "${HOME}/.local";
 fi
 
-singularity exec --home "${HOME}" --bind ${HOME}/.local:/home/joyvan/.local "${CONTAINER}" jupyter notebook --no-browser --port=$PORT --ip 0.0.0.0
+singularity exec --home "${HOME}" --bind ${HOME}/.local "${CONTAINER}" jupyter notebook --no-browser --port=$PORT --ip 0.0.0.0
