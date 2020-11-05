@@ -35,4 +35,4 @@ if [[ "${CONTAINER}" == docker* ]]; then
     CONTAINER=$(basename ${CONTAINER}).sif
 fi
 
-singularity exec --home ${HOME} --bind ${HOME}/.local:/home/username/.local ${CONTAINER} jupyter notebook --no-browser --port=$PORT --ip 0.0.0.0
+singularity exec --home ${HOME} --bind ${HOME}/.local:/home/users/jablum/.local ${CONTAINER} jupyter notebook --no-browser --port=$PORT --ip 0.0.0.0

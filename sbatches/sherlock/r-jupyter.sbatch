@@ -10,13 +10,13 @@ module load py-tensorflow/2.1.0_py36
 module load tbb/2019
 module load R/3.6.1
 #following block is for a monocle3 dependency to work:
-module load hdf5/1.10.6
-module load py-tensorflow/2.1.0_py36
-module load physics
-module load gdal
-module load udunits
-module load proj
-module load geos
+#module load hdf5/1.10.6
+#module load py-tensorflow/2.1.0_py36
+#module load physics
+#module load gdal
+#module load udunits
+#module load proj
+#module load geos
 
 # have the script just load (and not need to compile and install!)
 
