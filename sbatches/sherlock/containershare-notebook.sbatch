@@ -96,4 +96,4 @@ if [ ! -d "${HOME}/.local" ];
         mkdir -p "${HOME}/.local";
 fi
 
-singularity exec --contain -B /oak/stanford/groups/agitler/Shared/shared_notebooks/:/home/users/jablum "${CONTAINER}" jupyter notebook --no-browser --port=$PORT --ip 0.0.0.0
+singularity exec --contain -B "/oak/stanford/groups/agitler/Shared/Shared_Jupyter_Notebook_Analysis/shared_notebooks:/home" "${CONTAINER}" jupyter notebook --notebook-dir=/home --no-browser --port=$PORT --ip 0.0.0.0
