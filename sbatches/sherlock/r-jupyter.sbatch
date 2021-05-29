@@ -8,7 +8,8 @@ module load py-jupyter/1.0.0_py36
 module load hdf5/1.10.6
 module load py-tensorflow/2.1.0_py36
 module load tbb/2019
-module load R/3.6.1
+#module load R/3.6.1
+module load R/4.0.2
 #following block is for a monocle3 dependency to work:
 #module load hdf5/1.10.6
 #module load py-tensorflow/2.1.0_py36
