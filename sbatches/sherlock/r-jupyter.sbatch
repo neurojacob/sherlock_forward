@@ -29,4 +29,4 @@ Rscript -e "library('devtools'); devtools::install_github('IRkernel/IRkernel')"
 # register the kernel in the current R installation
 Rscript -e "IRkernel::installspec()"
 
-jupyter notebook ---NotebookApp.iopub_data_rate_limit=1.0e10 -no-browser --port=$PORT
+jupyter notebook --NotebookApp.iopub_data_rate_limit=1.0e10 --no-browser --port=$PORT
